@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* header */
+header{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    padding: 25px 9%;
+    width: 100%;
+}
+apply #icon-cart{
+    cursor: pointer;
+    font-size:30px;
+}
+apply .cart-count{
+    right: -6px;
+    height: 20px;
+    width: 20px;
+    background: 50%;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+apply .shop{
+    padding: 100px 9% 30px;
+}
+apply .section-title{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+apply .product-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+apply .product-box, apply .img-box{
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+apply .img-box img{
+    width: 100%;
+    transition: 0.5s;
+}
+apply .img-box:hover img{
+    transform: scale(1.1);
+}
+apply .product-box, apply .product-title{
+    font-size: 20px;
+    margin-top: 10px;
+}
+apply .product-box .price-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+apply .price-cart .price{
+    font-size: 18px;
+    font-weight: 500;
+}
+apply .price-cart .add-cart{
+    padding: 10px;
+    background: #e35f26;
+    border-radius: 6px;
+    font-size: 20px;
+     
+}
