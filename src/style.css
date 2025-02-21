@@ -17,11 +17,11 @@ header{
     padding: 25px 9%;
     width: 100%;
 }
-apply #icon-cart{
+ #icon-cart{
     cursor: pointer;
     font-size:30px;
 }
-apply .cart-count{
+.cart-count{
     right: -6px;
     height: 20px;
     width: 20px;
@@ -33,48 +33,45 @@ apply .cart-count{
     align-items: center;
     visibility: hidden;
 }
-apply .shop{
+.shop{
     padding: 100px 9% 30px;
 }
-apply .section-title{
+.section-title{
     font-size: 35px;
     text-align: center;
     margin-bottom: 15px;
 }
-apply .product-content{
+.product-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
-apply .product-box, apply .img-box{
-    display: flex;
+ .product-box, .img-box{
     border-radius: 10px;
     overflow: hidden;
 }
-apply .img-box img{
+.img-box img{
     width: 100%;
     transition: 0.5s;
 }
-apply .img-box:hover img{
+.img-box:hover img{
     transform: scale(1.1);
 }
-apply .product-box, apply .product-title{
+.product-box, .product-title{
     font-size: 20px;
     margin-top: 10px;
 }
-apply .product-box .price-cart{
-    display: flex;
+.price-cart{
     justify-content: space-between;
     align-items: center;
 }
-apply .price-cart .price{
+.price-cart, .price{
     font-size: 18px;
     font-weight: 500;
 }
-apply .price-cart .add-cart{
+ .add-cart{
     padding: 10px;
     background: #e35f26;
     border-radius: 6px;
-    font-size: 20px;
-     
+    font-size: 20px    
 }
