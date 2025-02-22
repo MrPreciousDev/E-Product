@@ -85,7 +85,7 @@ header a{
 .cart{
     position: fixed;
     top: 0;
-    right: 100%;
+    right: -100%;
     width: 360px;
     height: 100%;
     background: #ffff;
@@ -130,7 +130,7 @@ header a{
     display: flex;
     width: 100px;
     border: 1px solid #999;
-    border-radius: 6px;
+    border-radius: 6px; 
 }
 .cart-quantity button{
     background: transparent;
@@ -183,4 +183,14 @@ header a{
     right: 15px;
     font-size: 35px;
     cursor: pointer;
+}
+
+@media  screen and (max-width:360px) {
+    .product-content{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .cart{
+        width: 100%;
+    }
+    
 }
