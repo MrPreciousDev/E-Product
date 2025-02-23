@@ -103,8 +103,8 @@ const updateTotalPrice = () => {
 
 let cartItemCount = 0;
 const updateCartCount = change => {
-  const cartItemCountBadge = document.querySelector(".cart-item-count");
-  cartItemsCount += change;
+  const cartItemCountBadge = document.querySelector(".cart-count");
+  cartItemCount += change;
   if (cartItemCount > 0) {
     cartItemCountBadge.style.visibility = "visible";
     cartItemCountBadge.textContent = cartItemCount;
@@ -124,7 +124,7 @@ buyNowButton.addEventListener("click", () => {
     alert("Your cart is empty. Please add items to your cart before buying.");
     return;
   }
-  cartBoxes.forEach(cartBoxes => cartBox.remove());
+  cartBoxes.forEach(cartBox => cartBox.remove());
 
   cartItemCount = 0;
   updateCartCount(0);
