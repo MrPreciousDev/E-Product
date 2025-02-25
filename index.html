@@ -16,6 +16,14 @@
     </div>
    </header>
 
+    <div class="form">
+      <input type="text" name="" id="Search-input" placeholder="Search for product">
+      <button id="search-btn" onclick="searchProducts()">Search</button> 
+
+    </div>
+    
+
+
    <div class="cart">
     <h2 class="cart-title">Your Cart</h2>
     <div class="cart-content">
@@ -45,8 +53,8 @@
    <!-- Products -->
     <section class="shop">
       <h1 class="section-title">Our Products</h1>
-      <div class="product-content">
-        <div class="product-box">
+      <div class="products" id="productsContainer">
+        <div class="product-box" >
           <div class="img-box">
             <img src="./images/product1.jpg" alt="">
           </div>

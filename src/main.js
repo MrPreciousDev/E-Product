@@ -5,13 +5,95 @@ cartIcon.addEventListener("click", () => cart.classList.add("active"));
 cartClose.addEventListener("click", () => cart.classList.remove("active"));
 
 
-const addCartButtons = document.querySelectorAll(".add-cart");
-addCartButtons.forEach(button => {
-    button.addEventListener("click", event => {
-        const productBox = event.target.closest(".product-box");
+  // <img src="${product.image}" alt="${product.title}">
+                    // <h4>${product.title}</h4>
+                    // <p><strong>$${product.price}</strong></p>
+
+
+//  fetch image
+
+{/* <h2>Product Store</h2>
+    <input type="text" id="searchInput" placeholder="Search product...">
+    <button onclick="searchProducts()">Search</button>
+
+    <div class="products" id="productsContainer"></div> */}
+
+        async function fetchProducts() {
+            try {
+                let response = await fetch('https://fakestoreapi.com/products');
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                return [];
+            }
+        }
+        
+
+        async function searchProducts() {
+            let query = document.getElementById('Search-input').value.toLowerCase();
+            let products = await fetchProducts();
+            let filteredProducts = products.filter(product => 
+                product.title.toLowerCase().includes(query)
+            );
+            console.log(filteredProducts)
+            displayProducts(filteredProducts);
+        }
+
+        function displayProducts(products) {
+            let container = document.getElementById('productsContainer');
+            container.innerHTML = ""; // Clear previous results
+
+            if (products.length === 0) {
+                container.innerHTML = "<p>No products found</p>";
+                return;
+            }
+
+            products.forEach(product => {
+                let productDiv = document.createElement('div');
+                productDiv.classList.add('product');
+                productDiv.innerHTML = `
+                  <div class="product-box" >
+                    <div class="img-box">
+                      <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <h2 class="product-title">${product.title}</h2>
+                    <div class="price-cart">
+                       <span class="price">$${product.price}</span>
+                       <i class="ri-shopping-bag-line add-cart" onclick="hello()"></i>
+                    </div>
+                  </div>
+                `;
+                container.appendChild(productDiv);
+            });
+        }
+
+        // Fetch and display all products initially
+        window.onload = searchProducts;
+    
+
+
+
+
+
+
+
+
+
+
+function hello(){
+  const productBox = event.target.closest(".product-box");
         addToCart(productBox)
-    });
-});
+}
+
+
+// const addCartButtons = document.querySelectorAll(".add-cart");
+// addCartButtons.forEach(button => {
+//     button.addEventListener("click", (event) => {
+//       console.log("hello")
+//         const productBox = event.target.closest(".product-box");
+//         addToCart(productBox)
+//     });
+// });
 
 
 const cartContent = document.querySelector(".cart-content");
@@ -21,7 +103,7 @@ const addToCart = productBox => {
     const productImgSrc = productBox.querySelector("img").src;
     const productTitle = productBox.querySelector(".product-title").textContent;
     const productPrice = productBox.querySelector(".price").textContent;
-
+ 
 
     const cartItems = cartContent.querySelectorAll(".product-title");
     for (let item of cartItems) {

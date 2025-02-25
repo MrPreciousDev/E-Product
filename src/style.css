@@ -22,10 +22,34 @@ header a{
     list-style: none;
     text-decoration: none;
 }
+.form{
+    position: absolute;
+    left: 30%;
+    margin-top: 2rem;
+}
+#search-btn{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+}
+.form input{
+    width: 450px;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
  #icon-cart{
     cursor: pointer;
     font-size:30px;
 }
+.img-box img{
+    width: 250px;
+    height: 250px;
+   
+}
+
 .cart-count{
     right: -6px;
     height: 20px;
@@ -46,12 +70,12 @@ header a{
     text-align: center;
     margin-bottom: 15px;
 }
-.product-content{
+.products{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
- .product-box, .img-box{
+ .product, .img-box{
     border-radius: 10px;
     overflow: hidden;
 }
@@ -62,7 +86,7 @@ header a{
 .img-box:hover img{
     transform: scale(1.1);
 }
-.product-box, .product-title{
+.product, .product-title{
     font-size: 20px;
     margin-top: 10px;
 }
@@ -186,7 +210,7 @@ header a{
 }
 
 @media  screen and (max-width:360px) {
-    .product-content{
+    .products{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
     .cart{
